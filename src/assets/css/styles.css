@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    /* Spacing */
+    --ratio: 1.5;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+
+    /* Font Sizes */
+    --fs-3: calc(var(--fs-2) / var(--ratio));
+    --fs-2: calc(var(--fs-1) / var(--ratio));
+    --fs-1: calc(var(--fs0) / var(--ratio));
+    --fs0: 1rem;
+    --fs1: calc(var(--fs0) * var(--ratio));
+    --fs2: calc(var(--fs1) * var(--ratio));
+    --fs3: calc(var(--fs2) * var(--ratio));
+    --fs4: calc(var(--fs3) * var(--ratio));
+
+    /* Fonts */
+    --ff-primary: "Playfair Display", serif;
+    --ff-secondary: Raleway, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#content {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    background-image: url("../img/pexels-pixabay-260922.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: var(--ff-primary);
+    box-shadow: 1px 1px 10vw 10vw black inset,
+        -1px -1px 10vw 10vw black inset;
+}
+
+h1 {
+    font-family: var(--ff-secondary);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    all: unset;
+    padding: 1.5em 2em;
+    font-family: var(--ff-secondary);
+    text-transform: uppercase;
+    font-size: var(--fs1);
+    cursor: pointer;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 15% 15% 25% 15% 15%;
+    justify-content: center;
+    justify-items: center;
+    backdrop-filter: blur(10px);
+}
+
+nav > span {
+    display: flex;
+    align-items: center;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .2em;
+}
+
+.home .welcome {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.home h1 {
+    font-size: 6rem;
+    margin-top: -25px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-shadow: 0 0 2px rgba(0, 0, 0, .8);
+}
+
+.home .tagline,
+.home .welcome {
+    text-shadow: 0 0 2px rgba(0, 0, 0, .8),
+        1px 1px 2px black;
+}
