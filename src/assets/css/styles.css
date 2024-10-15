@@ -30,6 +30,9 @@
     /* Fonts */
     --ff-primary: "Playfair Display", serif;
     --ff-secondary: Raleway, sans-serif;
+
+    /* Color */
+    --clr-orange: #E39d25;
 }
 
 * {
@@ -76,7 +79,8 @@ a {
 
 button {
     all: unset;
-    padding: 1.5em 2em;
+    padding: 1.5em 2em .5em 2em;
+    margin-top: auto;
     font-family: var(--ff-secondary);
     text-transform: uppercase;
     font-size: var(--fs1);
@@ -88,12 +92,11 @@ nav {
     grid-template-columns: 15% 15% 25% 15% 15%;
     justify-content: center;
     justify-items: center;
-    backdrop-filter: blur(10px);
 }
 
 nav > span {
-    display: flex;
-    align-items: center;
+    margin-top: auto;
+    padding: 1.5em 2em .5em 2em;
 }
 
 @keyframes fadeInAnimation {
@@ -106,10 +109,20 @@ nav > span {
     }
 }
 
+nav > button:hover {
+    border-bottom: 5px solid var(--clr-orange);
+    margin-bottom: -5px;
+    transition: .2s ease border-bottom;
+}
+
+nav > button:active {
+    color: var(--clr-orange);
+}
+
 .home,
 .menu,
 .about,
-.reservations {
+.reservation {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -119,7 +132,6 @@ nav > span {
 }
 
 .home {
-
     letter-spacing: .2em;
 }
 
@@ -144,6 +156,8 @@ nav > span {
 
 h2 {
     font-size: var(--fs3);
+    text-transform: uppercase;
+    letter-spacing: .1em;
 }
 
 h3 {
@@ -151,20 +165,61 @@ h3 {
     font-weight: 500;
 }
 
+.reservation,
+.about,
 .menu {
     gap: var(--s2);
-    border: 2px solid rgba(255, 255, 255, .1);
-    width: 50%;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, .5);
 }
 
-.menu-item {
+.blurb,
+.menu-item,
+.resForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: var(--s1);
     width: 70ch;
     font-size: 1.2rem;
+    line-height: 1.6;
     text-shadow: 3px 3px 5px black;
+}
+
+.resForm fieldset {
+    border: none;
+    font-family: var(--ff-secondary);
+}
+
+.resForm label {
+    font-weight: 600;
+}
+
+.resForm input {
+    margin-bottom: var(--s1);
+    padding: var(--s-1);
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 1.3rem;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    width: 100%;
+    color-scheme: dark;
+}
+
+.resForm input:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.resForm button {
+    outline: 1px solid #fff;
+    padding: .75em 1.5em;
+    margin-top: var(--s1);
+    text-shadow: 3px 3px 5px black;
+}
+
+.resForm button:hover {
+    font-weight: 500;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    transition: .2s ease-in-out all;
 }

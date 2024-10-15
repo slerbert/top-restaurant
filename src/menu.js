@@ -19,6 +19,8 @@ class MenuItem {
 
 export const renderMenu = function() {
     const menu = createHtmlElement("div", "", "menu");
+    const header = createHtmlElement("h2", "Our Menu");
+    menu.appendChild(header);
 
     const menuElements = [];
 

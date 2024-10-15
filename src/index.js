@@ -1,6 +1,8 @@
 import "./assets/css/styles.css";
 import { renderHome } from "./home.js";
 import { renderMenu } from "./menu.js";
+import { renderAbout } from "./about.js";
+import { renderReservation } from "./reservation.js";
 
 const contentDiv = document.querySelector("#content");
 const navQuery = document.querySelector("nav");
@@ -22,8 +24,8 @@ navQuery.addEventListener("click", (e) => {
         contentDiv.replaceChildren();
         if (id === "home") renderHome();
         if (id === "menu") renderMenu();
-        // if (id === "about") renderAbout();
-        // if (id === "reservation") renderReservation();
+        if (id === "about") renderAbout();
+        if (id === "reservation") renderReservation();
     }
 });
 
